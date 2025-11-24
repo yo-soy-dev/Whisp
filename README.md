@@ -1,4 +1,4 @@
-# WHISP — Real-time Video Calling Chat App
+# Whisp — Real-Time Video Calling & Chat App
 
 A production-ready real-time messaging and video calling application with modern tech stack and fully configured for **deployment on Render**.
 
