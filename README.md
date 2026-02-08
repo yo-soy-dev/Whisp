@@ -1602,7 +1602,7 @@ Full-Stack Developer
 - 📧 **Email**: devanshtiwari817@gmail.com
 - 🐦 **X**: (https://x.com/soy_yo_dev40)
 
-**Project Link**: [https://github.com/yourusername/whisp](https://github.com/yo-soy-dev/Whisp)
+**Project Link**: [https://github.com/yo-soy-dev/Whisp](https://github.com/yo-soy-dev/Whisp)
 
 **Live Demo**: [https://whisp-app.onrender.com](https://whisp-app.onrender.com)
 
