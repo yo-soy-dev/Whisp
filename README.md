@@ -560,6 +560,7 @@ whisp/
 │   │   ├── 📂 lib/                # Libraries & utilities
 │   │   │   ├── db.js              # MongoDB connection
 │   │   │   └── stream.js          # Stream API configuration
+│   │   │   └── mail.js            # Brevo connection
 │   │   ├── 📂 middleware/         # Custom middleware
 │   │   │   └── auth.middleware.js # JWT verification
 │   │   ├── 📂 models/             # Mongoose schemas
