@@ -1596,11 +1596,11 @@ Distributed under the **MIT License**. See `LICENSE` file for more information.
 **Devansh Kumar Tiwari**  
 Full-Stack Developer
 
-- 💼 **Portfolio**: [yourportfolio.com](https://devansh-tiwari-full-stack-developer.vercel.app)
-- 🐙 **GitHub**: [@yourusername](https://github.com/yo-soy-dev)
-- 💼 **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/yo-soy-dev)
+- 💼 **Portfolio**: (https://devansh-tiwari-full-stack-developer.vercel.app)
+- 🐙 **GitHub**: (https://github.com/yo-soy-dev)
+- 💼 **LinkedIn**: (https://linkedin.com/in/yo-soy-dev)
 - 📧 **Email**: devanshtiwari817@gmail.com
-- 🐦 **X**: [@yourhandle](https://x.com/soy_yo_dev40)
+- 🐦 **X**: (https://x.com/soy_yo_dev40)
 
 **Project Link**: [https://github.com/yourusername/whisp](https://github.com/yo-soy-dev/Whisp)
 
