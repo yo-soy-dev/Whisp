@@ -1,3 +1,4 @@
+import mail from "../lib/mail.js";
 import { upsertStreamUser } from "../lib/stream.js";
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
@@ -46,14 +47,26 @@ export async function signup(req, res) {
       console.log("Error creating Stream user:", error);
     }
 
+    await mail({
+      to: newUser.email,
+      subject: "Welcome to Whisp! 🎉",
+      body: `<h1>Hello ${newUser.fullName}!</h1>
+             <p>Thanks for signing up for Whisp. We're excited to have you on board!</p>
+    <p>You can now start exploring, connect with friends, and join calls or chats.</p>
+    <p>If you didn’t create this account, please contact our support immediately.</p>
+    <hr />
+    <p>— The Whisp Team</p>
+    `,
+    });
+
     const token = jwt.sign({ userId: newUser._id }, process.env.JWT_SECRET_KEY, {
       expiresIn: "7d",
     });
 
     res.cookie("jwt", token, {
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      httpOnly: true, 
-      sameSite: "strict", 
+      httpOnly: true,
+      sameSite: "strict",
       secure: process.env.NODE_ENV === "production",
     });
 
@@ -84,10 +97,27 @@ export async function login(req, res) {
 
     res.cookie("jwt", token, {
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      httpOnly: true, 
-      sameSite: "strict", 
+      httpOnly: true,
+      sameSite: "strict",
       secure: process.env.NODE_ENV === "production",
     });
+
+    await mail({
+      to: user.email,
+      subject: "New Sign-In Alert 🔔",
+      body: `<h1>Hello ${user.fullName}!</h1>
+             <p>We noticed a new sign-in to your Whisp account just now.</p>
+    <ul>
+      <li><strong>Email:</strong> ${user.email}</li>
+      <li><strong>Time:</strong> ${new Date().toLocaleString()}</li>
+    </ul>
+    <p>If this was you, no action is needed. ✅</p>
+    <p>If you did not sign in, we recommend changing your password immediately.</p>
+    <hr />
+    <p>— The Whisp Security Team</p>
+    `,
+    });
+
 
     res.status(200).json({ success: true, user });
   } catch (error) {

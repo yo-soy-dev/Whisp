@@ -14,6 +14,8 @@ import PageLoader from "./components/PageLoader.jsx";
 import useAuthUser from "./hooks/useAuthUser.js";
 import Layout from "./components/Layout.jsx";
 import { useThemeStore } from "./store/useThemeStore.js";
+import Friend from "./pages/Friend.jsx";
+
 
 const App = () => {
   const { isLoading, authUser } = useAuthUser();
@@ -101,7 +103,24 @@ const App = () => {
             )
           }
         />
+
+        <Route
+  path="/friends"
+  element={
+    isAuthenticated && isOnboarded ? (
+      <Layout showSidebar={true}>
+        <Friend />
+      </Layout>
+    ) : (
+      <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
+    )
+  }
+/>
+
       </Routes>
+
+      
+
 
       <Toaster />
     </div>
