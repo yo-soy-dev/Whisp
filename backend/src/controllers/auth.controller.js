@@ -63,11 +63,18 @@ export async function signup(req, res) {
       expiresIn: "7d",
     });
 
+    // res.cookie("jwt", token, {
+    //   maxAge: 7 * 24 * 60 * 60 * 1000,
+    //   httpOnly: true,
+    //   sameSite: "none",
+    //   secure: process.env.NODE_ENV === "production",
+    // });
+
     res.cookie("jwt", token, {
-      maxAge: 7 * 24 * 60 * 60 * 1000,
       httpOnly: true,
-      sameSite: "strict",
-      secure: process.env.NODE_ENV === "production",
+      secure: true,       
+      sameSite: "none",    
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     res.status(201).json({ success: true, user: newUser });
@@ -95,11 +102,18 @@ export async function login(req, res) {
       expiresIn: "7d",
     });
 
-    res.cookie("jwt", token, {
-      maxAge: 7 * 24 * 60 * 60 * 1000,
+    // res.cookie("jwt", token, {
+    //   maxAge: 7 * 24 * 60 * 60 * 1000,
+    //   httpOnly: true,
+    //   sameSite: "none",
+    //   secure: process.env.NODE_ENV === "production",
+    // });
+
+     res.cookie("jwt", token, {
       httpOnly: true,
-      sameSite: "strict",
-      secure: process.env.NODE_ENV === "production",
+      secure: true,       
+      sameSite: "none",    
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     await mail({
@@ -127,7 +141,11 @@ export async function login(req, res) {
 }
 
 export function logout(req, res) {
-  res.clearCookie("jwt");
+  // res.clearCookie("jwt");
+  res.clearCookie("jwt", {
+    secure: true,
+    sameSite: "none",
+  });
   res.status(200).json({ success: true, message: "Logout successful" });
 }
 
