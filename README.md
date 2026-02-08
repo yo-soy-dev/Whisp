@@ -1604,8 +1604,7 @@ Full-Stack Developer
 
 **Project Link**: [https://github.com/yo-soy-dev/Whisp](https://github.com/yo-soy-dev/Whisp)
 
-**Live Demo**: [https://whisp-app.onrender.com](https://whisp-app.onrender.com)
-
+**Live Demo**: [https://streamify-video-calls-kxqc.onrender.com](https://streamify-video-calls-kxqc.onrender.com)
 ---
 
 ## Acknowledgments 🙏
